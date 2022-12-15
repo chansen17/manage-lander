@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manager Landing Page</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <body class="overflow-x-hidden relative">
+    <header class="w-full py-10" x-data="{ open: false } ">
+        <div class="w-[100%] sm:w-[80%] lg:w-[60%] h-80 md:h-96 rounded-l-full bg-red-300/30 -rotate-45 -z-10 absolute top-0 -right-64"></div>
+      <nav class="mxw flex items-center justify-between">
+        <div id="logo">
+            <img src="/logo.svg" alt="">
+        </div>
+        <div class="hidden lg:flex items-center gap-4 md:gap-6">
+            <a class="hover:text-gray-500" href="#">Pricing</a>
+            <a class="hover:text-gray-500" href="#">Product</a>
+            <a class="hover:text-gray-500" href="#">About Us</a>
+            <a class="hover:text-gray-500" href="#">Careers</a>
+            <a class="hover:text-gray-500" href="#">Community</a>
+        </div>
+        <div class="hidden md:block">
+          <button class="py-3 px-4 rounded-full bg-red-500 shadow-lg shadow-red-500/60 outline-none text-sm md:text-md text-white hover:text-gray-100 hover:bg-red-400 font-medium duration-300">Get Started</button>
+        </div>
+        <!-- mobile only -->
+        <div class="block md:hidden">
+          <button @click="open = ! open">
+            <img src="/icon-hamburger.svg" alt="">
+          </button>
+        </div>
+      </nav>
+      <!-- mobile nav -->
+      <div x-show="open" @click.outside="open = false" class="md:hidden animate animate__animated animate__fadeIn animate__faster fixed top-24 left-[50%] -translate-x-[50%] w-9/12 px-5 py-12 bg-gray-50/90 rounded-3xl shadow-xl">
+        <ul class="w-full space-y-1 text-center text-lg font-semibold text-slate-700">
+          <li class=""><a href="#pricing" class="">Pricing</a></li>
+          <li class=""><a href="#about" class="">About Us</a></li>
+          <li class=""><a href="#careers" class="">Careers</a></li>
+          <li class=""><a href="#community" class="">Community</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <section id="top" class="w-full mt-12">
+      <div class="mxw grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-center">
+        <div class="md:max-w-lg mx-auto md:mx-0 space-y-8">
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800">Bring everyone together to build better products.</h2>
+          <p class="md:max-w-sm text-md md:text-lg text-gray-400 font-light">Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.</p>
+          <button class="py-3 px-5 rounded-full bg-red-500 shadow-lg shadow-red-500/60 outline-none text-white font-medium hover:text-gray-100 hover:bg-red-400 duration-300">Get Started</button>
+        </div>
+        <div class="max-w-lg mx-auto md:mx-0">
+          <img class="h-full w-full" src="/illustration-intro.svg" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="w-full py-12 mt-24">
+      <div class="mxw grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <div class="space-y-5 max-w-md pb-5 md:pb-0">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-700">What's different about Manage?</h2>
+          <p class="text-md md:text-lg text-gray-400 font-light">
+            Manage provides all the functionality your team needs, without the complexity. Our software is tailored-made for modern digital product teams.
+          </p>
+        </div>
+        <div class="space-y-6"> 
+            <div data-aos="fade-right" class="flex gap-4 md:gap-6">
+                <span class="h-8 w-36 p-1 grid place-items-center bg-red-500 rounded-full font-medium text-white">01</span>
+                <div class="space-y-4">
+                  <h2 class="text-gray-700 font-bold">Track company-wide progress</h2>
+                  <p class="text-gray-400 font-normal">See how your dayo-to-day tasks fit into the wider vision. Go from  tracking progress at the milestone level all the way down to the smallest details. Never lose sight of the bigger picture again.</p>
+                </div>
+            </div>
+            <div data-aos="fade-right" class="flex gap-4 md:gap-6">
+                <span class="h-8 w-36 p-1 grid place-items-center bg-red-500 rounded-full font-medium text-white">02</span>
+                <div class="space-y-4">
+                  <h2 class="text-gray-700 font-bold">Advanced built-in reports</h2>
+                  <p class="text-gray-400 font-normal">Set internal delivery estimates and tracks progress towards company goals. Our customizable dashboard helps you build out the reports you need to keep stakeholders informed.</p>
+                </div>
+            </div>
+            <div data-aos="fade-right" class="flex gap-4 md:gap-6">
+                <span class="h-8 w-36 p-1 grid place-items-center bg-red-500 rounded-full font-medium text-white">03</span>
+                <div class="space-y-4">
+                  <h2 class="text-gray-700 font-bold">Everything you need in one place</h2>
+                  <p class="text-gray-400 font-normal">Stop jumping from one service to another to communicate, store files, track tasks and share documents. Manage offers an all-in-one team productivity solution.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="py-12">
+      <div class="mxw mt-24">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-slate-700 font-bold text-center">What they've said</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 md:gap-x-6 gap-y-10 mt-16">
+            <div data-aos="fade-up" class="relative w-full min-h-40 bg-gray-50 pt-12 pb-8 px-5 border-b-4 border-b-red-500 rounded-b-lg">
+                <img class="h-12 w-12 md:h-14 md:w-14 absolute -top-7 left-[50%] -translate-x-[50%]" src="/avatar-anisha.png" />
+                <h2 class="text-md md:text-lg font-semibold text-slate-700 text-center">Anisha Li</h2>
+                <p class="text-gray-400 text-center">"Manage has supercharged our teams production. The ease of maintaining visibility on larger milestones at all times keeps everyone motivated."</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="300" class="relative w-full min-h-40 bg-gray-50 pt-12 pb-8 px-5 border-b-4 border-b-red-500 rounded-b-lg">
+                <img class="h-12 w-12 md:h-14 md:w-14 absolute -top-7 left-[50%] -translate-x-[50%]" src="/avatar-ali.png" />
+                <h2 class="text-md md:text-lg font-semibold text-slate-700 text-center">Ali Bravo Li</h2>
+                <p class="text-gray-400 text-center">"We have been able to cancel numerous services since using Manage. There is no more cross-channel confusion and everyone is more focused."</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="600" class="relative w-full min-h-40 bg-gray-50 pt-12 pb-8 px-5 border-b-4 border-b-red-500 rounded-b-lg">
+                <img class="h-12 w-12 md:h-14 md:w-14 absolute -top-7 left-[50%] -translate-x-[50%]" src="/avatar-richard.png" />
+                <h2 class="text-md md:text-lg font-semibold text-slate-700 text-center">Richard Watts</h2>
+                <p class="text-gray-400 text-center">"Manage allows us to provide the structure to keep teams organized, focused and motivated. I can't, not, mention Manage when I speak with other like professionals."</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="getStarted" class="w-full mt-6 mb-16 flex justify-center">
+      <button class="py-3 px-4 rounded-full bg-red-500 text-white hover:text-gray-100 hover:bg-red-400 duration-300 font-medium">Get Started</button>
+    </section>
+
+    <section id="banner" class="w-full py-20 bg-red-500/90 relative overflow-hidden">
+      <div class="w-[60%] md:w-[30%] -rotate-45 h-52 bg-gray-100/10 absolute -bottom-32 left-10 rounded-r-full"></div>
+      <div class="mxw flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
+        <div class="md:max-w-md">
+          <p data-aos="fade-right" class="text-2xl md:text-3xl lg:text-4xl text-gray-50 font-semibold z-10">Simplify how your team works today.</p>
+        </div>
+        <div>
+          <button class="z-20 cursor-pointer py-3 px-5 bg-white hover:bg-gray-50 duration-300 text-orange-500 hover:text-orange-400 rounded-full shadow-lg">Get Started</button>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer" class="w-full py-24 bg-slate-700 relative overflow-hidden">
+      <div class="w-[60%] md:w-[30%] -rotate-45 h-64 bg-gray-100/10 absolute -top-32 right-10 rounded-l-full"></div>
+      <div class="mxw grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+        <img src="/logo.svg" alt="">
+        <div>
+          <ul class="text-gray-200 space-y-2">
+            <li><a href="#" class="hover:text-red-400 duration-300">Home</a></li>
+            <li><a href="#" class="hover:text-red-400 duration-300">Pricing</a></li>
+            <li><a href="#" class="hover:text-red-400 duration-300">Products</a></li>
+            <li><a href="#" class="hover:text-red-400 duration-300">About Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="text-gray-200 space-y-2">
+            <li><a href="#" class="hover:text-red-400 duration-300">Careers</a></li>
+            <li><a href="#" class="hover:text-red-400 duration-300">Community</a></li>
+            <li><a href="#" class="hover:text-red-400 duration-300">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="flex items-center gap-4 md:gap-6">
+          <input type="text" class="py-2 px-3 rounded-full bg-gray-100 text-gray-500 font-light outline-none text-sm" placeholder="Updates in your inbox">
+          <button class="py-2 px-3 bg-red-500 rounded-full font-medium text-white hover:text-gray-50 duration-300">Go</button>
+        </div>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
