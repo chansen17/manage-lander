@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
-  <body class="overflow-x-hidden relative">
-    <header class="w-full py-10 overflow-x-hidden" x-data="{ open: false }">
-        <div class="w-[100%] sm:w-[80%] lg:w-[60%] h-80 md:h-96 rounded-l-full bg-red-300/30 -rotate-45 -z-10 absolute top-0 -right-64"></div>
+  <body class="relative overflow-x-hidden">
+    <!-- shape -->
+    <header class="w-full py-10" x-data="{ open: false }">
+      <div class="w-[60%] md:w-[50%] lg:w-[40%] fixed -top-20 -right-20 h-96 rounded-l-full -rotate-45 bg-red-400/10 -z-10"></div>
       <nav class="mxw flex items-center justify-between">
         <div id="logo">
             <img src="/logo.svg" alt="">
@@ -34,8 +35,8 @@
         </div>
       </nav>
       <!-- mobile nav -->
-      <div x-show="open" @click.outside="open = false" class="md:hidden animate animate__animated animate__fadeIn animate__faster fixed top-24 left-[50%] -translate-x-[50%] w-9/12 px-5 py-12 bg-gray-50/90 rounded-3xl shadow-xl">
-        <ul class="w-full space-y-1 text-center text-lg font-semibold text-slate-700">
+      <div x-show="open" @click.outside="open = false" class="md:hidden animate animate__animated animate__fadeIn animate__faster fixed top-24 left-[50%] -translate-x-[50%] w-9/12 px-5 py-12 bg-white rounded-3xl shadow-2xl border-b-4 border-b-red-400">
+        <ul class="w-full space-y-1 text-center text-lg font-semibold text-slate-700 divide-y divide-[#efefef]">
           <li class=""><a href="#pricing" class="">Pricing</a></li>
           <li class=""><a href="#about" class="">About Us</a></li>
           <li class=""><a href="#careers" class="">Careers</a></li>
@@ -45,9 +46,9 @@
     </header>
 
     <section id="top" class="w-full mt-12">
-      <div class="mxw grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-center">
+      <div class="mxw flex justify-between flex-col md:flex-row gap-4 md:gap-6 items-center">
         <div class="md:max-w-lg mx-auto md:mx-0 space-y-8">
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800">Bring everyone together to build better products.</h2>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800">Bring everyone together to build better products.</h2>
           <p class="md:max-w-sm text-md md:text-lg text-gray-400 font-light">Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.</p>
           <button class="py-3 px-5 rounded-full bg-red-500 shadow-lg shadow-red-500/60 outline-none text-white font-medium hover:text-gray-100 hover:bg-red-400 duration-300">Get Started</button>
         </div>
@@ -120,19 +121,21 @@
     </section>
 
     <section id="banner" class="w-full py-20 bg-red-500/90 relative overflow-hidden">
-      <div class="w-[60%] md:w-[30%] -rotate-45 h-52 bg-gray-100/10 absolute -bottom-32 left-10 rounded-r-full"></div>
+      <!-- shape -->
+      <div class="w-72 h-72 rounded-full bg-red-300/10 absolute -bottom-32 left-10 rounded-r-full"></div>
       <div class="mxw flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
         <div class="md:max-w-md">
           <p data-aos="fade-right" class="text-2xl md:text-3xl lg:text-4xl text-gray-50 font-semibold z-10">Simplify how your team works today.</p>
         </div>
-        <div>
-          <button class="z-20 cursor-pointer py-3 px-5 bg-white hover:bg-gray-50 duration-300 text-orange-500 hover:text-orange-400 rounded-full shadow-lg">Get Started</button>
+        <div class="z-20">
+          <button class="cursor-pointer py-3 px-5 bg-white hover:bg-gray-50 duration-300 text-orange-500 hover:text-orange-400 rounded-full shadow-lg">Get Started</button>
         </div>
       </div>
     </section>
 
     <footer id="footer" class="w-full py-24 bg-slate-700 relative overflow-hidden">
-      <div class="w-[60%] md:w-[30%] -rotate-45 h-64 bg-gray-100/10 absolute -top-32 right-10 rounded-l-full"></div>
+      <!-- shape -->
+      <div class="w-[60%] md:w-[30%] rotate-45 h-72 bg-gray-600/10 absolute -bottom-32 right-10 rounded-l-full"></div>
       <div class="mxw grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
         <img src="/logo.svg" alt="">
         <div>
@@ -150,7 +153,7 @@
             <li><a href="#" class="hover:text-red-400 duration-300">Privacy Policy</a></li>
           </ul>
         </div>
-        <div class="flex items-center gap-4 md:gap-6">
+        <div class="flex items-center gap-4 md:gap-6 z-20">
           <input type="text" class="py-2 px-3 rounded-full bg-gray-100 text-gray-500 font-light outline-none text-sm" placeholder="Updates in your inbox">
           <button class="py-2 px-3 bg-red-500 rounded-full font-medium text-white hover:text-gray-50 duration-300">Go</button>
         </div>
